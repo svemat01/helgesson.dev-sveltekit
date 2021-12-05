@@ -26,7 +26,7 @@
     }
 
     img.invert {
-        filter: var(--invert);
+        filter: var(--theme-invert);
     }
     
     div {
@@ -35,8 +35,8 @@
 
         padding-left: 1rem;
 
-        background: var(--color-primary);
-        color: var(--color-inv-primary);
+        background: var(--theme-colors-primary);
+        color: var(--theme-colors-secondary);
         border-radius: 1rem;
         transition: transform 0.2s ease-in-out;
     }

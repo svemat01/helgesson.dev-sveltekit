@@ -11,7 +11,7 @@
     img {
         border-radius: 50%;
         max-width: 15rem;
-        border: .3rem solid var(--color-primary);
+        border: .3rem solid var(--theme-colors-primary);
     }
 
     h1 {
@@ -20,6 +20,6 @@
     }
 
     h2 {
-        color: var(--color-secondary);
+        color: var(--theme-colors-primary);
     }
 </style>
