@@ -42,5 +42,6 @@
         <h1>{post.title}</h1>
         <p>{post.date}</p>
         <p>{post.description}</p>
+        <a href="{post.path}">Read more</a>
     </article>
 {/each}

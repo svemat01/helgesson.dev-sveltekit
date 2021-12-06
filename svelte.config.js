@@ -1,15 +1,30 @@
-import mdsvexConfig from './mdsvex.config.js';
 import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
+import toml from 'toml';
+
+
+const mdsvexConfigExtensions = ['.svelte.md', '.md', '.svx']
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-    extensions: ['.svelte', ...mdsvexConfig.extensions],
+    extensions: ['.svelte', ...mdsvexConfigExtensions],
 
     // Consult https://github.com/sveltejs/svelte-preprocess
     // for more information about preprocessors
-    preprocess: [preprocess(), mdsvex(mdsvexConfig)],
+    preprocess: [preprocess(), mdsvex({
+        extensions: mdsvexConfigExtensions,
+    
+        smartypants: {
+            dashes: 'oldschool'
+        },
+    
+        remarkPlugins: [],
+        rehypePlugins: [],
+        layout: {
+            blog: 'src/layouts/blog.svelte'
+        }
+    })],
 
     kit: {
         adapter: adapter({
