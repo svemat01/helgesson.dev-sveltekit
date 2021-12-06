@@ -1,6 +1,6 @@
 <script lang="ts">
     import { ThemeWrapper } from 'svelte-themer';
-    import { themes } from '../themes';
+    import { themes } from '$lib/themes';
 </script>
 
 <svelte:head>

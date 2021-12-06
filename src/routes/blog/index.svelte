@@ -8,7 +8,7 @@
 
                 // extract filename from path and remove file extension
                 const filename =
-                    'blog/' +
+                    '/blog/' +
                     path
                         .split('/')
                         .pop()
@@ -22,7 +22,6 @@
             })
         );
 
-        console.log(posts);
         return {
             props: {
                 posts: posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())

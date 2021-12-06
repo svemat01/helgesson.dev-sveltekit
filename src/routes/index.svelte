@@ -1,6 +1,6 @@
 <script lang="ts">
-    import ContactList from '../components/ContactList.svelte';
-    import Profile from '../components/Profile.svelte';
+    import ContactList from '$lib/components/ContactList.svelte';
+    import Profile from '$lib/components/Profile.svelte';
 
     import { ThemeToggle } from 'svelte-themer';
 </script>

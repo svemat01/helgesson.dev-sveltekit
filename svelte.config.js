@@ -1,7 +1,6 @@
 import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
-import toml from 'toml';
 
 
 const mdsvexConfigExtensions = ['.svelte.md', '.md', '.svx']
@@ -22,7 +21,7 @@ const config = {
         remarkPlugins: [],
         rehypePlugins: [],
         layout: {
-            blog: 'src/layouts/blog.svelte'
+            blog: 'src/lib/layouts/blog.svelte'
         }
     })],
 
