@@ -3,7 +3,7 @@
 </script>
 
 <!-- svelte-ignore a11y-img-redundant-alt -->
-<img src={url} alt="Profile picture of Jakob">
+<img src={url} alt="Profile picture of Jakob" />
 <h1>Jakob Helgesson</h1>
 <h2>Svemat01</h2>
 
@@ -11,12 +11,12 @@
     img {
         border-radius: 50%;
         max-width: 15rem;
-        border: .3rem solid var(--theme-colors-primary);
+        border: 0.3rem solid var(--theme-colors-primary);
     }
 
     h1 {
         margin-top: 1rem;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
     }
 
     h2 {

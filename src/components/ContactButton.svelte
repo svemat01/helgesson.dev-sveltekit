@@ -1,16 +1,14 @@
 <script lang="ts">
     import { darkMode } from '../scripts/darkMode';
 
-
     export let name = 'empty';
-    export let iconSrc = 'https://img.helgesson.dev/me.png'
+    export let iconSrc = 'https://img.helgesson.dev/me.png';
     export let iconAlt = 'empty';
     export let url = 'https://helgesson.dev';
     export let invert = false;
     export let style = '';
 
     const classes = invert ? 'invert' : '';
-
 </script>
 
 <a href={url} target="_blank">
@@ -28,7 +26,7 @@
     img.invert {
         filter: var(--theme-invert);
     }
-    
+
     div {
         display: flex;
         align-items: center;
@@ -45,11 +43,10 @@
         transform: scale(1.1);
         transform: rotate(2deg);
     }
-    
+
     p {
-        margin: 1rem .5rem 1rem .5rem;
+        margin: 1rem 0.5rem 1rem 0.5rem;
         font-weight: bold;
         font-size: 1.5rem;
     }
-
 </style>

@@ -1,26 +1,46 @@
-<script lang="ts" context='module'>
-	const allPosts = import.meta.glob("./*.md");
+<script lang="ts" context="module">
+    export async function load({ page, fetch }) {
+        const allPosts = import.meta.glob('./*.md');
 
-	const posts = Promise.all(Object.entries(allPosts).map(async ([path, post]) => {
-		const { metadata } = await post();
+        const posts = await Promise.all(
+            Object.entries(allPosts).map(async ([path, post]) => {
+                const { metadata } = await post();
 
-		// extract filename from path and remove file extension
-		const filename = 'blog/' + path.split("/").pop().replace(/\.[^/.]+$/, "");
+                // extract filename from path and remove file extension
+                const filename =
+                    'blog/' +
+                    path
+                        .split('/')
+                        .pop()
+                        .replace(/\.[^/.]+$/, '');
 
-		const returnObj = {
-			path: filename,
-			...metadata
-		};
-		return returnObj;
-	}));
+                const returnObj = {
+                    path: filename,
+                    ...metadata
+                };
+                return returnObj;
+            })
+        );
 
-	console.log(posts);
+        console.log(posts);
+        return {
+            props: {
+                posts: posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+            }
+        };
+    }
 </script>
 
-{#await posts}
-	<h1>Loading Blog Posts</h1>
-{:then posts} 
-	{#each posts as post}
-		<a style="font-size: 2rem;" href={post.path}>{post.title}</a>
-	{/each}
-{/await}
+<script>
+    export let posts;
+</script>
+
+{@debug posts}
+
+{#each posts as post}
+    <article>
+        <h1>{post.title}</h1>
+        <p>{post.date}</p>
+        <p>{post.description}</p>
+    </article>
+{/each}
