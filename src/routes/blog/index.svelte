@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-    export async function load({ page, fetch }) {
+    export async function load(): Promise<Record<string, unknown>> {
         const allPosts = import.meta.glob('./*.md');
 
         const posts = await Promise.all(

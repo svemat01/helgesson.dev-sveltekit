@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { ThemeWrapper, ThemeToggle } from 'svelte-themer';
+    import { ThemeWrapper } from 'svelte-themer';
     import { themes } from '../themes';
 </script>
 

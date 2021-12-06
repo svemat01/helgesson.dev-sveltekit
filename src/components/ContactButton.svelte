@@ -1,6 +1,4 @@
 <script lang="ts">
-    import { darkMode } from '../scripts/darkMode';
-
     export let name = 'empty';
     export let iconSrc = 'https://img.helgesson.dev/me.png';
     export let iconAlt = 'empty';
